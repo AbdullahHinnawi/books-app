@@ -4,9 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=production node -r esm index.js",
+    "dev": "NODE_ENV=development nodemon -r esm index.js",
+    "test": "NODE_ENV=test jest --verbose --runInBand",
+    "lint": "eslint --fix ."
   },
   "author": "Abdullah Hinnawi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.14"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "eslint": "^8.3.0",
+    "jest": "^27.4.3",
+    "jest-esm-transformer": "^1.0.0",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
 }

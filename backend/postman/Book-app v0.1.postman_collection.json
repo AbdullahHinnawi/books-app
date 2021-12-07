@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "0add2f06-18ba-4168-bd76-5b2afea96cdb",
+		"name": "Book-app v0.1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"title\": \"Learn AWS Serverless Computing\",\n    \"author\": \"Scott Patterson\",\n    \"description\":\n      \"This is a great book for beginners as well as intermediate cloud learners. It starts with foundational concepts and then quickly moves to build complex solutions. The book mainly focuses on AWS Lambda, Amazon API Gateway, and a few services from AWS.\",\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"title\": \"Learn AWS Serverless Computing Updated\",\n    \"author\": \"Scott Patterson updated\",\n    \"description\":\n      \"This is a great book for beginners as well as intermediate cloud learners. It starts with foundational concepts and then quickly moves to build complex solutions. The book mainly focuses on AWS Lambda, Amazon API Gateway, and a few services from AWS.\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/books/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"books",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "61a94aeba68307ac853eb7e5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

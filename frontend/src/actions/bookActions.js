@@ -56,7 +56,7 @@ export const createBook = (book) => async (dispatch) => {
     const createdBook = await bookService.createBook(book)
     dispatch({ type: NEW_BOOK, data: createdBook })
 
-    const message = `Book with title '${createdBook.title} added ssuccessfully!`
+    const message = `Book with title "${createdBook.title}" added successfully!`
     dispatch(setNotification({ message: message, success: true, error: false }))
     setTimeout(async () => {
       await dispatch(removeNotification())
@@ -77,7 +77,7 @@ export const updateBook = (bookId, book) => async (dispatch) => {
     const updatedBook = await bookService.updateBook(bookId, book)
     dispatch({ type: UPDATE_BOOK, data: updatedBook })
 
-    const message = `Book with title '${updatedBook.title}' updated successfully!`
+    const message = `Book with title "${updatedBook.title}" updated successfully!`
     dispatch(setNotification({ message: message, success: true, error: false }))
     setTimeout(async () => {
       await dispatch(removeNotification())

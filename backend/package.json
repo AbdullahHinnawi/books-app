@@ -6,12 +6,15 @@
   "scripts": {
     "start": "NODE_ENV=production node -r esm index.js",
     "dev": "NODE_ENV=development nodemon -r esm index.js",
+    "client": "cd ../frontend && npm start",
+    "fullstack": "concurrently \"npm run dev\" \"npm run client\"",
     "test": "NODE_ENV=test jest --verbose --runInBand",
     "lint": "eslint --fix ."
   },
   "author": "Abdullah Hinnawi",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^6.4.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "esm": "^3.2.25",

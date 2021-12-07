@@ -4,8 +4,9 @@
 > is added, it will appear in the book list from which, you can update or delete added books.
 
 ### ✨ [Running version on Heroku](https://books-app-heroku.herokuapp.com/)
-> *Notice: Heroku puts the app to sleep after 30 minutes of inactivity. This means 
-that the app will take some time (about 5-10 seconds or more) to wake up again.
+
+> \*Notice: Heroku puts the app to sleep after 30 minutes of inactivity. This means
+> that the app will take some time (about 5-10 seconds or more) to wake up again.
 
 ## Frontend technologies:
 
@@ -108,7 +109,7 @@ npm run fullstack
 
 - Remote database (separate database for testing)
 - Backend integration tests
-- Backend HTTP requests exports as JSON file
+- Backend HTTP requests exported as JSON file
 - Error handling
 - Three tier of validation (client, server, database)
 - Notifications

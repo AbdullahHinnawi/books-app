@@ -3,6 +3,10 @@
 > You can use Books App to create a new book which has a title, author and description. When a book
 > is added, it will appear in the book list from which, you can update or delete added books.
 
+### ✨ [Running version on Heroku](https://books-app-heroku.herokuapp.com/)
+> *Notice: Heroku puts the app to sleep after 30 minutes of inactivity. This means 
+that the app will take some time (about 5-10 seconds or more) to wake up again.
+
 ## Frontend technologies:
 
 - React
@@ -106,9 +110,11 @@ npm run fullstack
 - Backend integration tests
 - Backend HTTP requests exports as JSON file
 - Error handling
-- Form validation
+- Three tier of validation (client, server, database)
 - Notifications
+- Deployment on Heroku
 - README.md file (guidance to run the application locally)
+- JS documentation
 
 ## Author:
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
 import ListItemButton from '@mui/material/ListItemButton'
@@ -7,8 +7,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchBooks, setCurrentBook } from 'actions/bookActions'
 import { Grid, useTheme, useMediaQuery } from '@mui/material'
 
+/**
+ * @component
+ * @desc Renders the book list which consists of the added
+ * books by the user.
+ */
 const BookList = () => {
-  const [selectedIndex, setSelectedIndex] = React.useState(null)
+  const [selectedIndex, setSelectedIndex] = useState(null)
   const books = useSelector((state) => state.book.books)
 
   const theme = useTheme()

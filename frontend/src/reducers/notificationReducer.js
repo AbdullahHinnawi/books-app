@@ -10,6 +10,12 @@ const initialState = {
   error: false,
 }
 
+/**
+ * @desc notificationReducer that controls notification state
+ * @param {Object} state
+ * @param {Object} action
+ * @returns state
+ */
 const notificationReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_NOTIFICATION:

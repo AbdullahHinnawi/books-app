@@ -1,3 +1,7 @@
+/**
+ * @module actions/bookActions
+ * @desc Redux book actions
+ */
 import bookService from '../services/bookService'
 import {
   FETCH_BOOKS,
@@ -9,6 +13,10 @@ import {
 } from '../utils/types'
 import { removeNotification, setNotification } from './notificationActions'
 
+/**
+ * @function
+ * @desc Fetches all the books.
+ */
 export const fetchBooks = () => async (dispatch) => {
   try {
     const books = await bookService.getAll()
@@ -21,20 +29,34 @@ export const fetchBooks = () => async (dispatch) => {
   }
 }
 
+/**
+ * @function
+ * @desc Sets current book.
+ * @param {Object} book
+ */
 export const setCurrentBook = (book) => (dispatch) => {
   dispatch({ type: SET_CURRENT_BOOK, data: book })
 }
 
+/**
+ * @function
+ * @desc Resets current book to the initial book state.
+ */
 export const resetCurrentBook = () => async (dispatch) => {
   dispatch({ type: RESET_CURRENT_BOOK })
 }
 
+/**
+ * @function
+ * @desc Creates a new book.
+ * @param {Object} book
+ */
 export const createBook = (book) => async (dispatch) => {
   try {
     const createdBook = await bookService.createBook(book)
     dispatch({ type: NEW_BOOK, data: createdBook })
 
-    const message = `Book with title'${createdBook.title} added' successfully!`
+    const message = `Book with title '${createdBook.title} added ssuccessfully!`
     dispatch(setNotification({ message: message, success: true, error: false }))
     setTimeout(async () => {
       await dispatch(removeNotification())
@@ -44,12 +66,18 @@ export const createBook = (book) => async (dispatch) => {
   }
 }
 
+/**
+ * @function
+ * @desc Updates a book by it's id.
+ * @param {String} bookId
+ * @param {Object} book
+ */
 export const updateBook = (bookId, book) => async (dispatch) => {
   try {
     const updatedBook = await bookService.updateBook(bookId, book)
     dispatch({ type: UPDATE_BOOK, data: updatedBook })
 
-    const message = `Book with title'${updatedBook.title} updated' successfully!`
+    const message = `Book with title '${updatedBook.title}' updated successfully!`
     dispatch(setNotification({ message: message, success: true, error: false }))
     setTimeout(async () => {
       await dispatch(removeNotification())
@@ -59,6 +87,11 @@ export const updateBook = (bookId, book) => async (dispatch) => {
   }
 }
 
+/**
+ * @function
+ * @desc Deletes a book by it's id.
+ * @param {String} bookId
+ */
 export const deleteBook = (bookId) => async (dispatch) => {
   try {
     await bookService.deleteBook(bookId)

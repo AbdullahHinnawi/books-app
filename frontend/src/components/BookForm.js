@@ -12,6 +12,11 @@ import {
 } from 'actions/bookActions'
 import { Grid, useTheme, useMediaQuery } from '@mui/material'
 
+/**
+ * @component
+ * @desc Renders book form which can be used to create a new
+ * book or to edit one from the book list.
+ */
 const BookForm = () => {
   const currentBook = useSelector((state) => state.book.currentBook)
 
@@ -67,11 +72,7 @@ const BookForm = () => {
   }
 
   return (
-    <Grid
-      item
-      xs={matches ? 12 : 6}
-      p={1} /*style={{ backgroundColor: '#0ff' }}*/
-    >
+    <Grid item xs={matches ? 12 : 6} p={1}>
       <h3>Create new book or edit one from book list</h3>
 
       <Box

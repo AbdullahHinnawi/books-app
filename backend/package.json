@@ -8,6 +8,9 @@
     "dev": "NODE_ENV=development nodemon -r esm index.js",
     "client": "cd ../frontend && npm start",
     "fullstack": "concurrently \"npm run dev\" \"npm run client\"",
+    "build:ui": "rm -rf build && cd ../frontend && npm run build --prod && cp -r build ../backend",
+    "deploy": "git push heroku master",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
     "test": "NODE_ENV=test jest --verbose --runInBand",
     "lint": "eslint --fix ."
   },

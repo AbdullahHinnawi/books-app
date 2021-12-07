@@ -3,6 +3,11 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchNotification } from '../actions/notificationActions'
 
+/**
+ * @component
+ * @desc Renders the notification component which use to inform the user
+ * about successful or error operations.
+ */
 const Notification = () => {
   const notification = useSelector((state) => state.notification)
   const dispatch = useDispatch()

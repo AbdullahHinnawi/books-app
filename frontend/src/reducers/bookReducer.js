@@ -17,7 +17,12 @@ const initialState = {
   currentBook: initialBook,
   books: [],
 }
-
+/**
+ * @desc bookReducer that controls book state
+ * @param {Object} state
+ * @param {Object} action
+ * @returns state
+ */
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_BOOKS:
